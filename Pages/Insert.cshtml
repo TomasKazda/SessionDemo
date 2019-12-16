@@ -1,0 +1,29 @@
+﻿@page
+@model SessionDemo.Pages.InsertModel
+@{
+    ViewData["Title"] = "Insert";
+}
+
+<h2>Insert new item</h2>
+
+<form method="post">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label>Round no.</label>
+                <input value="" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label asp-for=""></label>
+                <select asp-for="" asp-items="" class="form-control">
+                </select>
+                <span asp-validation-for="" class="form-text text-danger"></span>
+            </div>
+        </div>
+        <div class="col-sm-2 align-self-center flex-grow-1">
+            <button type="submit" class="btn btn-primary w-100">Try!</button>
+        </div>
+    </div>
+</form>

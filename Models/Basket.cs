@@ -17,6 +17,6 @@ namespace SessionDemo.Models
         [IgnoreDataMember]
         public string Description { get; set; }
 
-        private decimal vat { get; }
+        private decimal vat { get; } = 1.21m;
     }
 }

@@ -8,14 +8,15 @@ using SessionDemo.Services;
 
 namespace SessionDemo.Pages
 {
-    public class IndexModel : PageModel
+    public class InsertModel : PageModel
     {
         private readonly DataManipulator dm;
 
-        public IndexModel(DataManipulator dm)
+        public InsertModel(DataManipulator dm)
         {
             this.dm = dm;
         }
+
         public void OnGet()
         {
 
