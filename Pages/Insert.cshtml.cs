@@ -36,6 +36,8 @@ namespace SessionDemo.Pages
 
                 dm.AddItem(basket);
 
+                dm.SaveData();
+
                 return RedirectToPage("/Index");
             }
 

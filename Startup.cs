@@ -34,7 +34,7 @@ namespace SessionDemo
             services.AddSession();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddSingleton<SessionDemo.Services.DataManipulator>();
+            services.AddTransient<SessionDemo.Services.DataManipulator>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -53,6 +53,8 @@ namespace SessionDemo
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            app.UseSession();
 
             app.UseMvc();
         }

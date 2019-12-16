@@ -21,6 +21,7 @@ namespace SessionDemo.Pages
 
         public void OnGet()
         {
+            dm.LoadData();
             AllItems = new List<Models.Basket>();
             foreach (var item in dm)
             {
