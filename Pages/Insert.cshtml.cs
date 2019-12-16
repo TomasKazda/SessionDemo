@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SessionDemo.Services;
+using SessionDemo.ViewModels;
 
 namespace SessionDemo.Pages
 {
@@ -17,9 +18,28 @@ namespace SessionDemo.Pages
             this.dm = dm;
         }
 
+        [BindProperty]
+        public BasketForm BasketForm { get; set; }
+
         public void OnGet()
         {
 
+        }
+
+        public IActionResult OnPost()
+        {
+            if (ModelState.IsValid)
+            {
+                SessionDemo.Models.Basket basket = new Models.Basket();
+                basket.Description = BasketForm.Description;
+                basket.Price = BasketForm.Price;
+
+                dm.AddItem(basket);
+
+                return RedirectToPage("/Index");
+            }
+
+            return Page();
         }
     }
 }

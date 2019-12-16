@@ -34,7 +34,7 @@ namespace SessionDemo
             services.AddSession();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddTransient<SessionDemo.Services.DataManipulator>();
+            services.AddSingleton<SessionDemo.Services.DataManipulator>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

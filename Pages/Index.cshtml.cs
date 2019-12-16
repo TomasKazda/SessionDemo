@@ -16,9 +16,16 @@ namespace SessionDemo.Pages
         {
             this.dm = dm;
         }
+
+        public List<SessionDemo.Models.Basket> AllItems { get; set; }
+
         public void OnGet()
         {
-
+            AllItems = new List<Models.Basket>();
+            foreach (var item in dm)
+            {
+                AllItems.Add(item);
+            }
         }
     }
 }
